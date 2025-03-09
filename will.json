@@ -1,0 +1,17 @@
+{
+  "repo": "https://github.com/Sadman-TheDentian/domains",
+
+  "owner": {
+    "username": "Sadman-TheDentian",
+    "email": "darkdenti44@gmail.com"
+  },
+
+  "target": {
+    "record-type": {
+       "name": "", 
+       "value": ""
+     }
+  },
+
+  "proxied": false
+}
