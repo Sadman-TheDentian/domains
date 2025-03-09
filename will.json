@@ -6,22 +6,36 @@
   },
   "target": [
     {
+      "record-type": "CNAME",
+      "name": "dentisystems",
+      "value": "your-github-pages-url.github.io"
+    },
+    {
+      "record-type": "TXT",
+      "name": "dentisystems",
+      "value": "zoho-verification=zb61229538.zmverify.zoho.com"
+    },
+    {
       "record-type": "MX",
+      "name": "dentisystems",
       "value": "mx.zoho.com",
       "priority": 10
     },
     {
       "record-type": "MX",
+      "name": "dentisystems",
       "value": "mx2.zoho.com",
       "priority": 20
     },
     {
       "record-type": "MX",
+      "name": "dentisystems",
       "value": "mx3.zoho.com",
       "priority": 50
     },
     {
       "record-type": "TXT",
+      "name": "dentisystems",
       "value": "v=spf1 include:zoho.com ~all"
     },
     {
