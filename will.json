@@ -1,17 +1,34 @@
 {
-  "repo": "https://github.com/Sadman-TheDentian/domains",
-
+  "repo": "https://github.com/Sadman-TheDentiam/domains",
   "owner": {
-    "username": "Sadman-TheDentian",
+    "username": "Sadman-TheDentiam",
     "email": "darkdenti44@gmail.com"
   },
-
-  "target": {
-    "record-type": {
-       "name": "", 
-       "value": ""
-     }
-  },
-
+  "target": [
+    {
+      "record-type": "MX",
+      "value": "mx.zoho.com",
+      "priority": 10
+    },
+    {
+      "record-type": "MX",
+      "value": "mx2.zoho.com",
+      "priority": 20
+    },
+    {
+      "record-type": "MX",
+      "value": "mx3.zoho.com",
+      "priority": 50
+    },
+    {
+      "record-type": "TXT",
+      "value": "v=spf1 include:zoho.com ~all"
+    },
+    {
+      "record-type": "CNAME",
+      "name": "mail",
+      "value": "business.zoho.com"
+    }
+  ],
   "proxied": false
 }
