@@ -4,7 +4,6 @@ function getDomainsList(filesPath) {
 
     for (var i = 0; i < files.length; i++) {
         var name = files[i].split("/").pop().replace(/\.json$/, "");
-
         result.push({ name: name, data: require(files[i]) });
     }
 
@@ -36,7 +35,6 @@ for (var subdomain in allDomains) {
 
     // Handle CNAME records
     if (domainData.target.CNAME) {
-        // Allow CNAME target on root
         if (subdomainName === "@") {
             commit.push(ALIAS(domainData.target.CNAME.name, domainData.target.CNAME.value + ".", proxyState));
         } else {
@@ -63,6 +61,14 @@ for (var subdomain in allDomains) {
         }
     }
 }
+
+// ✅ Add Zoho TXT, MX, SPF, and CNAME records
+commit.push(TXT("dentisystems", "zoho-verification=zb61229538.zmverify.zoho.com"));
+commit.push(MX("dentisystems", 10, "mx.zoho.com."));
+commit.push(MX("dentisystems", 20, "mx2.zoho.com."));
+commit.push(MX("dentisystems", 50, "mx3.zoho.com."));
+commit.push(TXT("dentisystems", "v=spf1 include:zoho.com ~all"));
+commit.push(CNAME("autodiscover.dentisystems", "autodiscover.zoho.com."));
 
 // *.mx.is-a-good.dev
 commit.push(IGNORE("*", "MX", "*"));
